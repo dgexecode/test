@@ -1,209 +1,217 @@
-<div class="flex flex-auto max-w-full justify-center text-center">
-  <div class="w-full max-w-full overflow-hidden">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imagem Interativa do Corpo</title>
-    <!-- Link para o Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagem Interativa do Corpo</title>
+  <!-- Link para o Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <style>
-      /* Aplicando a fonte Poppins em todo o documento */
-      body {
-        font-family: 'Poppins', sans-serif;
-      }
+  <style>
+    /* Aplicando a fonte Poppins em todo o documento */
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
 
-      .container {
-        position: relative;
-        width: 260px;
-        margin: 20px auto;
-      }
+    .container {
+      position: relative;
+      width: 260px;
+      margin: 20px auto;
+    }
 
-      .container img {
-        width: 100%;
-        height: auto;
-      }
+    .container img {
+      width: 100%;
+      height: auto;
+    }
 
-      .marker {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90px;
-        height: 20px;
-        background-color: white;
-        border: 2px solid #007bff;
-        border-radius: 8px;
-        padding: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-        font-size: 12px;
-        font-family: 'Poppins', sans-serif; /* Alteração para a fonte Poppins */
-      }
+    .marker {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 90px;
+      height: 20px;
+      background-color: white;
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      padding: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 12px;
+      font-family: 'Poppins', sans-serif;
+    }
 
-      .marker.active {
-        background-color: #007bff;
-        color: white;
-        font-weight: bold;
-        border-color: #0056b3;
-      }
+    .marker.active {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border-color: #0056b3;
+    }
 
-      #ombro {
-        top: 35%;
-        left: -20%;
-      }
+    #ombro {
+      top: 35%;
+      left: -20%;
+    }
 
-      #cotovelo {
-        top: 25%;
-        left: -20%;
-      }
+    #cotovelo {
+      top: 25%;
+      left: -20%;
+    }
 
-      #barriga {
-        top: 25%;
-        left: 80%;
-      }
+    #barriga {
+      top: 25%;
+      left: 80%;
+    }
 
-      #pochete {
-        top: 36%;
-        left: 80%;
-      }
+    #pochete {
+      top: 36%;
+      left: 80%;
+    }
 
-      #quadril {
-        top: 59%;
-        left: -19%;
-      }
+    #quadril {
+      top: 59%;
+      left: -19%;
+    }
 
-      #culotes {
-        top: 45%;
-        left: 82%;
-      }
+    #culotes {
+      top: 45%;
+      left: 82%;
+    }
 
-      #joelho {
-        top: 75%;
-        left: -18%;
-      }
+    #joelho {
+      top: 75%;
+      left: -18%;
+    }
 
-      #coxa {
-        top: 60%;
-        left: 80%;
-      }
+    #coxa {
+      top: 60%;
+      left: 80%;
+    }
 
-      .line {
-        position: absolute;
-        width: 2px;
-        background-color: #007bff;
-        transition: height 0.3s, transform 0.3s;
-      }
+    .line {
+      position: absolute;
+      width: 2px;
+      background-color: #007bff;
+      transition: height 0.3s, transform 0.3s;
+    }
 
-      .circle {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: #007bff;
-        border-radius: 50%;
-      }
+    .circle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #007bff;
+      border-radius: 50%;
+    }
 
-      #line-ombro {
-        top: 38%;
-        left: 33%;
-        height: 39px;
-        transform: rotate(90deg);
-        transform-origin: top;
-      }
+    #line-ombro {
+      top: 38%;
+      left: 33%;
+      height: 39px;
+      transform: rotate(90deg);
+      transform-origin: top;
+    }
 
-      #line-cotovelo {
-        top: 30%;
-        left: 15%;
-        height: 45px;
-        transform: rotate(-50deg);
-        transform-origin: top;
-      }
+    #line-cotovelo {
+      top: 30%;
+      left: 15%;
+      height: 45px;
+      transform: rotate(-50deg);
+      transform-origin: top;
+    }
 
-      #line-barriga {
-        top: 30%;
-        left: 80%;
-        height: 80px;
-        transform: rotate(70deg);
-        transform-origin: top;
-      }
+    #line-barriga {
+      top: 30%;
+      left: 80%;
+      height: 80px;
+      transform: rotate(70deg);
+      transform-origin: top;
+    }
 
-      #line-pochete {
-        top: 40%;
-        left: 80%;
-        height: 100px;
-        transform: rotate(90deg);
-        transform-origin: top;
-      }
+    #line-pochete {
+      top: 40%;
+      left: 80%;
+      height: 100px;
+      transform: rotate(90deg);
+      transform-origin: top;
+    }
 
-      #line-quadril {
-        top: 43%;
-        left: 30%;
-        height: 87px;
-        transform: rotate(30deg);
-        transform-origin: top;
-      }
+    #line-quadril {
+      top: 43%;
+      left: 30%;
+      height: 87px;
+      transform: rotate(30deg);
+      transform-origin: top;
+    }
 
-      #line-culotes {
-        top: 42%;
-        left: 70%;
-        height: 43px;
-        transform: rotate(-60deg);
-        transform-origin: top;
-      }
+    #line-culotes {
+      top: 42%;
+      left: 70%;
+      height: 43px;
+      transform: rotate(-60deg);
+      transform-origin: top;
+    }
 
-      #line-joelho {
-        top: 78%;
-        left: 43%;
-        height: 60px;
-        transform: rotate(90deg);
-        transform-origin: top;
-      }
+    #line-joelho {
+      top: 78%;
+      left: 43%;
+      height: 60px;
+      transform: rotate(90deg);
+      transform-origin: top;
+    }
 
-      #line-coxa {
-        top: 60%;
-        left: 83%;
-        height: 48px;
-        transform: rotate(100deg);
-        transform-origin: top;
-      }
-    </style>
+    #line-coxa {
+      top: 60%;
+      left: 83%;
+      height: 48px;
+      transform: rotate(100deg);
+      transform-origin: top;
+    }
+  </style>
+</head>
+<body>
 
-    <div class="container">
-      <img src="https://i.imgur.com/iWDQS0O.png" alt="Pessoa" loading="lazy" fetchpriority="high">
+  <div class="flex flex-auto max-w-full justify-center text-center">
+    <div class="w-full max-w-full overflow-hidden">
+      <div class="container">
+        <img src="https://i.imgur.com/iWDQS0O.png" alt="Pessoa" loading="lazy" fetchpriority="high">
 
-      <div id="ombro" class="marker" onclick="toggleActive('ombro')">Costas</div>
-      <div id="cotovelo" class="marker" onclick="toggleActive('cotovelo')">Braços</div>
-      <div id="barriga" class="marker" onclick="toggleActive('barriga')">Barriga</div>
-      <div id="pochete" class="marker" onclick="toggleActive('pochete')">Pochete</div>
-      <div id="quadril" class="marker" onclick="toggleActive('quadril')">Flanco</div>
-      <div id="culotes" class="marker" onclick="toggleActive('culotes')">Culotes</div>
-      <div id="joelho" class="marker" onclick="toggleActive('joelho')">Pernas</div>
-      <div id="coxa" class="marker" onclick="toggleActive('coxa')">Coxa</div>
+        <div id="ombro" class="marker" onclick="toggleActive('ombro')">Costas</div>
+        <div id="cotovelo" class="marker" onclick="toggleActive('cotovelo')">Braços</div>
+        <div id="barriga" class="marker" onclick="toggleActive('barriga')">Barriga</div>
+        <div id="pochete" class="marker" onclick="toggleActive('pochete')">Pochete</div>
+        <div id="quadril" class="marker" onclick="toggleActive('quadril')">Flanco</div>
+        <div id="culotes" class="marker" onclick="toggleActive('culotes')">Culotes</div>
+        <div id="joelho" class="marker" onclick="toggleActive('joelho')">Pernas</div>
+        <div id="coxa" class="marker" onclick="toggleActive('coxa')">Coxa</div>
 
-      <div id="line-ombro" class="line"></div>
-      <div id="line-cotovelo" class="line"></div>
-      <div id="line-barriga" class="line"></div>
-      <div id="line-pochete" class="line"></div>
-      <div id="line-quadril" class="line"></div>
-      <div id="line-culotes" class="line"></div>
-      <div id="line-joelho" class="line"></div>
-      <div id="line-coxa" class="line"></div>
- 
-      <div id="circle-ombro" class="circle" style="top: 37%; left: 30%;"></div>
-      <div id="circle-cotovelo" class="circle" style="top: 35%; left: 25%;"></div>
-      <div id="circle-barriga" class="circle" style="top: 35%; left: 49%;"></div>
-      <div id="circle-pochete" class="circle" style="top: 39%; left: 40%;"></div>
-      <div id="circle-quadril" class="circle" style="top: 42%; left: 28%;"></div>
-      <div id="circle-culotes" class="circle" style="top: 42%; left: 70%;"></div>
-      <div id="circle-joelho" class="circle" style="top: 77%; left: 43%;"></div>
-      <div id="circle-coxa" class="circle" style="top: 57%; left: 65%;"></div>
+        <div id="line-ombro" class="line"></div>
+        <div id="line-cotovelo" class="line"></div>
+        <div id="line-barriga" class="line"></div>
+        <div id="line-pochete" class="line"></div>
+        <div id="line-quadril" class="line"></div>
+        <div id="line-culotes" class="line"></div>
+        <div id="line-joelho" class="line"></div>
+        <div id="line-coxa" class="line"></div>
+
+        <div id="circle-ombro" class="circle" style="top: 37%; left: 30%;"></div>
+        <div id="circle-cotovelo" class="circle" style="top: 35%; left: 25%;"></div>
+        <div id="circle-barriga" class="circle" style="top: 35%; left: 49%;"></div>
+        <div id="circle-pochete" class="circle" style="top: 39%; left: 40%;"></div>
+        <div id="circle-quadril" class="circle" style="top: 42%; left: 28%;"></div>
+        <div id="circle-culotes" class="circle" style="top: 42%; left: 70%;"></div>
+        <div id="circle-joelho" class="circle" style="top: 77%; left: 43%;"></div>
+        <div id="circle-coxa" class="circle" style="top: 57%; left: 65%;"></div>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  // Função para alternar entre ativo e inativo
-  function toggleActive(markerId) {
-    const marker = document.getElementById(markerId);
-    marker.classList.toggle('active');
-  }
-</script>
+  <script>
+    // Função para alternar entre ativo e inativo
+    function toggleActive(markerId) {
+      const marker = document.getElementById(markerId);
+      marker.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
